@@ -18,13 +18,13 @@ $ npm -v
 
 ```bash
 $ npm init
-$ npm install --save-dev webpack webpack-cli typescript ts-loader
+$ npm install --save-dev typescript ts-loader
 $ vi package.json
 $ cat package.json
 ...
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack"
+    "build": "tsc -p tsconfig.json"
   },
 ...
   "devDependencies": {
@@ -44,30 +44,18 @@ $ cat package.json
   "compilerOptions": {
     "sourceMap": true,
     "target": "es5",
-    "module": "es2015"
+    "module": "commonjs",
+    "outDir": "dist"
   }
 }
 ```
 
-### webpack.config.js
+### fastify導入
 
-```javascript
-module.exports = {
-  mode: "development",
-  target: 'node',
-  entry: "./src/main.ts",
-  module: {
-    rules: [
-      {
-        test: /\.ts$/,
-        use: 'ts-loader',
-      }
-    ]
-  },
-  resolve: {
-    extensions: [
-      '.ts', '.js',
-    ]
-  }
-};
+[Node.jsフレームワークを比較して見えたそれぞれの特徴](https://www.wantedly.com/companies/company_3239475/post_articles/179467)
+[https://www.fastify.io/](https://www.fastify.io/)
+
+```bash
+$ npm install --save fastify
+$ npm install --save-dev @types/node
 ```

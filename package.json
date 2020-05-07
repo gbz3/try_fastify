@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack"
+    "build": "tsc -p tsconfig.json"
   },
   "repository": {
     "type": "git",
@@ -18,10 +18,12 @@
   },
   "homepage": "https://github.com/gbz3/try_fastify#readme",
   "devDependencies": {
+    "@types/node": "^13.13.5",
     "ts-loader": "^7.0.3",
-    "typescript": "^3.8.3",
-    "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.11"
+    "typescript": "^3.8.3"
   },
-  "private": true
+  "private": true,
+  "dependencies": {
+    "fastify": "^2.14.0"
+  }
 }
